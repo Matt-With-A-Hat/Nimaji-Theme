@@ -1,0 +1,26 @@
+{
+  "name": "nimaji",
+  "description": "A theme to generate money",
+  "main": "gulpfile.js",
+  "authors": [
+    "Matthias Mueller"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nimaji"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "css-hamburgers": "^0.9.1",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

@@ -1,0 +1,361 @@
+//@media (max-width: 780px) {
+@media #{$mobile-all}{
+  /**
+  * --------------------------------------------------------------
+  * =General Styles
+  * --------------------------------------------------------------
+  */
+  html {
+  }
+  body {
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Elements
+  * --------------------------------------------------------------
+  */
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .site-main {
+    h1 {
+      margin-top: 0;
+    }
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+  
+  /**
+  * =Images
+  */
+  .image--promotion {
+    top: 30px;
+  }
+  
+  /**
+  * =Boxes
+  */
+  div.box--product {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-bottom: $theme-2 1px solid;
+  }
+  .row > div:last-of-type .box--product {
+    border-bottom: none;
+  }
+  
+  div.box--normal {
+    padding: 20px;
+  }
+  
+  div.box--image {
+    padding: 20px;
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Header
+  * --------------------------------------------------------------
+  */
+  .header--title {
+    font-size: 28px;
+  }
+  
+  .header--subtitle {
+    font-size: 20px;
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Navigation
+  * --------------------------------------------------------------
+  */
+  .menu-logo {
+    height: $navbar-height-sm;
+    display: inline-block;
+  }
+  nav.menu-navbar {
+    height: $navbar-height-sm;
+    .inner-width {
+      > div {
+        height: $navbar-height-sm;
+      }
+    }
+  }
+  .hamburger {
+    padding-top: 13px;
+    padding-right: 25px;
+    float: right;
+  }
+  .nav-layer {
+    //@include transition(all, $transition-time, ease-out);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 200vh !important;
+    left: -15px;
+    position: relative;
+    //top: $navbar-height-sm * 2;
+    width: 120%;
+    z-index: 109;
+    top: -7px;
+  }
+  
+  /**
+  * =Menu-Box
+  */
+  #navbarNavDropdown {
+    @include transition(all, $transition-time, ease-out);
+    position: absolute;
+    display: block;
+    height: $navbar-height-sm;
+    z-index: 1000;
+    width: 0;
+    left: -5%;
+    //right: -15px;
+    top: -7px;
+    background: white;
+    float: right;
+    //overflow: hidden;
+    &.is-active {
+      @include transition(all, $transition-time, ease-out);
+      width: 110%;
+      //overflow: inherit;
+      ul#main-menu li.menu-level-1 > .dropdown > a > i {
+        right: 5px;
+        //display: inline-block;
+        @include transition(all, $transition-time, ease-in);
+      }
+    }
+    //&.is-
+    ul#main-menu {
+      float: left;
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 0;
+      background-color: #fff;
+      overflow: hidden;
+      a {
+        color: $black-3;
+        background-color: #fff;
+        padding: 15px 18px;
+        display: block;
+        height: 60px;
+        text-decoration: none;
+        text-transform: uppercase;
+        span {
+          font-size: 16px;
+        }
+      }
+      li.menu-level-1 {
+        padding-left: 5px;
+        display: block;
+        width: 100%;
+        border-bottom: $gray-3 1px solid;
+        overflow: hidden;
+        &:hover {
+          border-left: solid $theme-4 8px;
+          box-sizing: border-box;
+          background-color: $white;
+          color: $black-1;
+        }
+        a:visited, a:focus, a:hover, a:active {
+          color: $black-1;
+          background-color: $white;
+        }
+        .dropdown {
+          width: 100%;
+        }
+        > a, .dropdown > a {
+          width: 100%;
+          > i {
+            position: absolute;
+            top: 15px;
+            right: -40px;
+            float: right;
+            font-size: 28px;
+            padding-left: 40%;
+            margin-right: 10px;
+            -webkit-text-stroke: 4px $white;
+            @include transition(all, $transition-time, ease-in);
+          }
+        }
+      }
+    }
+    .dropdown-content.menu-list {
+      @include transition(all, $transition-time, ease-in);
+      background-color: #fff;
+      position: fixed;
+      //top: $navbar-height-sm *2;
+      overflow: initial;
+      z-index: 1000;
+      float: right;
+      right: 0;
+      width: 0;
+      min-width: 0;
+      max-height: 100%;
+      font-size: 16px;
+      display: block;
+      &.is-active {
+        @include transition(all, $transition-time, ease-in);
+        width: 100vw;
+        li.menu-level-2 {
+          width: 100%;
+          display: block;
+        }
+      }
+      li.menu-level-2 {
+        @include transition(all, $transition-time, ease-in);
+        background-color: #fff;
+        width: 0;
+        float: right;
+        //display: none;
+      }
+      .menu-back {
+        display: block;
+        a {
+          background-color: $theme-1 !important;
+        }
+        i {
+          left: 13px;
+          font-size: 28px;
+          -webkit-text-stroke: 4px $theme-1;
+          @include transition(all, $transition-time, ease-in);
+        }
+        span {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  
+  /**
+  * =Logo
+  */
+  a.navbar-brand img {
+    height: 40px;
+    width: 50px;
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Content
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * =Table
+  */
+  .row-1 {
+    background: black;
+  }
+  
+  tbody {
+    td[class^="column-"] {
+      border: 1px solid #ddd !important;
+    }
+    
+    td.column-1 {
+      width: 34%;
+    }
+    
+    td.column-2 {
+      padding-left: 12px;
+      width: 66%;
+    }
+    
+    //td[class^="column-"] {
+    //}
+    .column-2 {
+      ul, ol {
+        margin-left: 18px;
+      }
+    }
+  }
+  
+  /**
+  * =Medium Item Box
+  */
+  .medium-products-box {
+    .product--image-box {
+      padding-bottom: 10px;
+    }
+    
+    .product--price {
+      position: relative;
+      bottom: 0;
+      width: 70%;
+      margin: 0 auto;
+      left: 0;
+    }
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Media
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * --------------------------------------------------------------
+  * =Widgets
+  * --------------------------------------------------------------
+  */
+  .widget-area {
+    .product--box {
+      margin-left: 0;
+    }
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Comments
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * --------------------------------------------------------------
+  * =Forms
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * --------------------------------------------------------------
+  * =Footer
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * --------------------------------------------------------------
+  * =Extras
+  * --------------------------------------------------------------
+  */
+  #wp-admin-bar-w3tc {
+    display: none !important;
+  }
+  
+  /**
+  * --------------------------------------------------------------
+  * =Bootstrap customization
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * --------------------------------------------------------------
+  * =Test
+  * --------------------------------------------------------------
+  */
+  
+}

@@ -1,0 +1,7 @@
+/**
+* --------------------------------------------------------------
+* =src-dev
+* --------------------------------------------------------------
+* This folder contains files that are only loaded in develop mode, so you can work offline. They are loaded via CDN otherwise.
+* See theme-settings.php and change 'NIMAJI_DEBUG' to set develop mode on/off.
+*/

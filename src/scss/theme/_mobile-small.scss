@@ -1,0 +1,23 @@
+@media #{$mobile-small}{
+  /**
+  * --------------------------------------------------------------
+  * =Content
+  * --------------------------------------------------------------
+  */
+  
+  /**
+  * =Main
+  */
+  .site-container .site-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .header--image {
+    display: none;
+  }
+  
+  .small-devices-spacer {
+    height: 46px;
+  }
+}

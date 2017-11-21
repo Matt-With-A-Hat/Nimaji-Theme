@@ -1,0 +1,94 @@
+/**
+* --------------------------------------------------------------
+* =Mixins
+* --------------------------------------------------------------
+*/
+@mixin box-shadow {
+  //box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.10);
+}
+
+@mixin thin-border {
+  border: 1px solid $color-12;
+}
+
+@mixin font-awesome($content) {
+  content: $content;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: relative;
+  left: 0;
+}
+
+@mixin transition($prop, $time, $ease) {
+  -webkit-transition: $prop $time $ease;
+  -moz-transition: $prop $time $ease;
+  -ms-transition: $prop $time $ease;
+  -o-transition: $prop $time $ease;
+  transition: $prop $time $ease;
+}
+
+/**
+* =Backgrounds
+*/
+@mixin linearGradient($direction, $rgba1, $rgba2, $img:"") {
+  background: $rgba1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($direction, $rgba1, $rgba2), url($img); /*Safari 5.1-6*/
+  background: -o-linear-gradient($direction, $rgba1, $rgba2), url($img); /*Opera 11.1-12*/
+  background: -moz-linear-gradient($direction, $rgba1, $rgba2), url($img); /*Fx 3.6-15*/
+  background: linear-gradient(to $direction, $rgba1, $rgba2), url($img); /*Standard*/
+}
+
+/**
+* =Media queries
+*/
+$mobile-all: "only screen
+  and (max-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (max-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (max-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1),
+  (max-width: 1024px)";
+$mobile-small: "only screen
+  and (max-width: 780px)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (max-width: 780px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (max-width: 780px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1),
+  (max-width: 780px)";
+$tablet-all: "only screen
+  and (min-width: 768px)
+  and (max-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1),
+  only screen
+  and (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1)";
+$desktop-all: "print, screen and (min-width: 1024px)";
+$desktop-large: "print, screen and (min-width: 1365px)";
+
+//Browsers queries
+$ie11: "screen
+  and (-ms-high-contrast: active),
+  (-ms-high-contrast: none)";
