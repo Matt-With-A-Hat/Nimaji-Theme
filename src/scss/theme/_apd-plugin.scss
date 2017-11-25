@@ -16,6 +16,71 @@
     color: $red-3;
     font-size: 14px;
   }
+  
+  span.overall-rating {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    //font-size: 28px;
+    font-size: 2.8em;
+    //color: $blue-2;
+  }
+  span.overall-rating-text {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.check:before {
+  @include font-awesome("\f00c");
+  color: $success-1;
+  font-size: 130%;
+}
+
+.times:before {
+  @include font-awesome("\f00d");
+  color: $danger;
+  font-size: 130%;
+}
+
+.plus-factor:before {
+  @include font-awesome("\f055");
+  color: $success-1;
+  font-size: 130%;
+  padding-right: 4px;
+}
+
+.minus-factor:before {
+  @include font-awesome("\f056");
+  color: $danger;
+  font-size: 130%;
+  padding-right: 4px;
+}
+
+.details-promotion:empty {
+  display: none;
+}
+
+.promotion-stripe {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.details-promotion {
+  color: white;
+  background: $danger;
+  position: absolute;
+  height: 38px;
+  padding: 0;
+  top: 0;
+  left: -1px;
+  right: -1px;
+  text-transform: uppercase;
+  line-height: 40px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /**
@@ -35,7 +100,7 @@
     display: block;
     margin-top: 15px;
   }
-    
+  
   .box--select {
     margin-top: 5px;
   }
@@ -71,124 +136,12 @@
 }
 
 .affiliate-products-db.bigtable {
-  
-  ////search input
-  //.input-group {
-  //  span {
-  //    background-color: $theme-4;
-  //    border-radius: 0;
-  //    i {
-  //      color: $white;
-  //    }
-  //  }
-  //  .form-control {
-  //    border-radius: 0;
-  //  }
-  //}
-  //
-  //table {
-  //  font-size: 85%;
-  //
-  //  .model {
-  //    text-transform: uppercase;
-  //    padding: 0 !important;
-  //    position: relative;
-  //    > div {
-  //      padding: 8px;
-  //    }
-  //  }
-  //  .border-left {
-  //    border-left: 1px solid $gray-3;
-  //  }
-  //  .border-right {
-  //    border-right: 1px solid $gray-3;
-  //  }
-  //
-  //  thead {
-  //    tr {
-  //      th {
-  //        vertical-align: middle;
-  //        border-bottom: 0 !important;
-  //      }
-  //    }
-  //  }
-  //  tbody {
-  //    border-collapse: collapse;
-  //    tr {
-  //      td {
-  //        vertical-align: middle;
-  //        //background-color: $white;
-  //      }
-  //    }
-  //  }
-  //
-  //  /**
-  //  * =Table promotion
-  //  */
-  //  span.table-promotion {
-  //    display: block;
-  //    bottom: 0;
-  //    position: absolute;
-  //    left: 0;
-  //    width: 100%;
-  //
-  //    &.bestseller {
-  //      background: $theme-4 !important;
-  //      color: $white;
-  //    }
-  //    &.promo-performance {
-  //      background: $theme-4;
-  //      color: $white;
-  //    }
-  //    &.promo-price-performance {
-  //      background: $theme-4;
-  //      color: $white;
-  //    }
-  //  }
-  //
-  //  /**
-  //  * =Overall rating
-  //  */
-  //  span.overall-rating {
-  //    font-size: 2em;
-  //  }
-  //
-  //  /**
-  //  * =Bestseller
-  //  */
-  //  td.bestseller {
-  //    border-top: 2px solid $theme-4 !important;
-  //    border-bottom: 2px solid $theme-4;
-  //    background-color: $theme-1;
-  //    &:first-of-type {
-  //      border-left: 2px solid $theme-4;
-  //    }
-  //  }
-  //
-  //  /**
-  //  * =Performance-Winner
-  //  */
-  //  td.promo-performance {
-  //    border-top: 2px solid $theme-4 !important;
-  //    border-bottom: 2px solid $theme-4;
-  //    background-color: $theme-1;
-  //    &:first-of-type {
-  //      border-left: 2px solid $theme-4;
-  //    }
-  //  }
-  //
-  //  /**
-  //  * =Price-Performance-Winner
-  //  */
-  //  td.promo-price-performance {
-  //    border-top: 2px solid $theme-4 !important;
-  //    border-bottom: 2px solid $theme-4;
-  //    background-color: $theme-1;
-  //    &:first-of-type {
-  //      border-left: 2px solid $theme-4;
-  //    }
-  //  }
-  //}
+  table thead tr th {
+    vertical-align: middle;
+  }
+  table tbody tr td {
+    vertical-align: middle;
+  }
 }
 
 /**
@@ -222,6 +175,42 @@
 
 .affiliate-products-db.smalltable {
   table.table {
+    border: 1px solid $gray-3;
+    
+    thead {
+      display: none;
+    }
+    
+    tbody tr {
+      td {
+        position: relative;
+        .infobox-thumbnail {
+          margin-top: 10px;
+        }
+        .btn {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      &.image {
+        td {
+          padding-top: 55px;
+          img {
+            //max-width: 100px;
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+      &.amazon-buttons {
+        a.btn {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    
     .medium-amazon-image {
       width: 80%;
       height: 80%;
@@ -236,6 +225,13 @@
     }
     //table-layout: fixed;
     .table--promotion {
+      color: white;
+      position: absolute;
+      top: 0;
+      left: -1px;
+      right: -1px;
+      text-transform: uppercase;
+      line-height: 40px;
       font-weight: 500;
       font-size: 14px;
       &.bestseller {
@@ -243,11 +239,9 @@
       }
       &.promo-performance {
         background: $theme-4;
-        //color: $theme-5;
       }
       &.promo-price-performance {
         background: $theme-4;
-        //color: $theme-5;
       }
     }
     
@@ -343,11 +337,55 @@
 
 /**
 * --------------------------------------------------------------
+* =Small Item Template
+* --------------------------------------------------------------
+*/
+.affiliate-products-db {
+  .small-item {
+    margin: 20px 0 60px 0;
+    
+    .panel-heading {
+      display: table;
+      height: 75px;
+      h4 {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .infobox-thumbnail {
+      min-height: 170px;
+    }
+  }
+}
+
+/**
+* --------------------------------------------------------------
 * =Details Template
 * --------------------------------------------------------------
 */
 
 .affiliate-products-db {
+  
+  -webkit-transform: abs(012);
+  -moz-transform: abs(012);
+  -ms-transform: abs(012);
+  -o-transform: abs(012);
+  transform: abs(012);
+  
+  .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+  
+  .img-responsive {
+    padding: 0 10px;
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+    }
+  }
+  
   .apd-details {
     @media #{$mobile-small}{
       .overall-rating {
@@ -372,6 +410,10 @@
     
     .panel-body {
       padding-bottom: 0;
+    }
+    
+    .infobox {
+      margin-bottom: 30px;
     }
     
     .infobox-header {
@@ -399,6 +441,24 @@
       width: 100%;
       padding-top: 25px;
       padding-bottom: 60px;
+    }
+    
+    .infobox-bottom-body {
+      > .row {
+        margin-top: 30px;
+        .tabs .nav-tabs li {
+          cursor: pointer;
+          a {
+            border-left: none;
+          }
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+      .tab-content {
+        border: none;
+      }
     }
     
     .small-table {
@@ -473,6 +533,24 @@
             }
             
             .detailed-rating-row {
+  
+              > .row {
+                margin-top: 30px;
+                .progress-bars {
+                  margin-top: 22px;
+                }
+                .progress {
+                  margin-bottom: 0;
+      
+                  .progress-bar {
+                    background-color: #2b7a00;
+                  }
+                }
+                .progress-label {
+                  margin-bottom: 35px;
+                }
+              }
+              
               .category-rating {
                 .progress-bars {
                   .progress {
@@ -512,15 +590,6 @@
               }
             }
           }
-          .tab-pane.details {
-            table {
-              tr {
-                th {
-                  background-color: $white !important;
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -529,6 +598,55 @@
         iframe {
           width: 100%;
           height: 1300px;
+        }
+      }
+    }
+  
+    .tab-pane.details {
+      .row {
+        table {
+          margin-bottom: 0;
+          tr.category {
+            background: $gray-2;
+            font-weight: bold;
+            td:nth-child(3) {
+              font-family: inherit;
+            }
+          }
+          tr th {
+            background-color: $white !important;
+          }
+          tr {
+            td:nth-child(3) {
+              font-family: monospace;
+            }
+          }
+        }
+      }
+    }
+    
+    .tab-pane.overview .general-rating-row > div {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      
+      .overall-rating {
+      }
+      
+      .amazon-rating {
+        a {
+          color: #000000;
+        }
+        
+        i.fa.fa-caret-right {
+          margin-right: 3px;
+        }
+        
+        .number-of-ratings {
+          margin: 2px 10px;
+          
+          span {
+            color: $apd-black-1;
+          }
         }
       }
     }

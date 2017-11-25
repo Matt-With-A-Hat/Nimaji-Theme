@@ -88,3 +88,17 @@ if ( ! function_exists( 'my_filter_head' ) ) {
 //}
 
 //add_filter( 'the_content', 'filter_ptags' );
+
+function nimaji_output_footer() {
+//$bar_style = get_option('clb_bar_pos') . ':0;background:' . get_option('clb_bar_color') . ';color:' . get_option('clb_bar_text_color') . ';';
+//$btn_style = 'background:' . get_option('clb_btn_color') . ';color:' . get_option('clb_btn_text_color') . ';';
+
+$barMessage = "This website uses cookies. By continuing to browse the site, you are agreeing to our <a href=\"http://www.maehroboter-guru.de/impressum#cookies\" target=\"_blank\">use of cookies</a>";
+$buttonMessage = "Agree";
+
+?><!-- Cookie Bar -->
+<div id="cookie-law-bar"><?= $barMessage; ?><button id="cookie-law-btn" onclick="clb_accept();"><?= $buttonMessage; ?></button></div>
+<!-- End Cookie Bar --><?php
+
+}
+add_action('wp_footer', 'nimaji_output_footer');

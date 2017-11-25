@@ -50,7 +50,7 @@
 				</div>
 				<?php
 				if ( has_header_image() ) { ?>
-					<img src="<?= get_header_image(); ?>" alt="<?= get_the_title(); ?>Header Image">
+					<img src="<?= get_header_image(); ?>" title="<?= get_the_title(); ?>Header Image" alt="<?= get_the_title(); ?>Header Image">
 					<?php
 				}; ?>
 			</div>

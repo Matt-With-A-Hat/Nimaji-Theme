@@ -15,11 +15,15 @@ var zip = require('gulp-zip');
  */
 gulp.task('sass', function () {
 
-    var base = sass('src/scss/nimaji.scss', {style: 'compressed'})
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('../css'));
+    // var utilities = sass('src/scss/utilities.scss', {style: 'compressed'})
+    //
+    //     .pipe(concat('utilities.css'))
+    //     .pipe(rename({suffix: '.min'}))
+    //     .pipe(gulp.dest('src/css'));
 
-    var utilities = sass('src/scss/utilities.scss', {style: 'compressed'})
+    var nimaji = sass('src/scss/nimaji.scss', {style: 'compressed'})
+
+        .pipe(concat('nimaji.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('../css'));
 
@@ -27,7 +31,8 @@ gulp.task('sass', function () {
     var localScss = [
         'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss',
         'bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss',
-        'bower_components/font-awesome/scss/font-awesome.scss',
+        // 'bower_components/font-awesome/scss/font-awesome.scss',
+        'src/src-local/scss/font-awesome/font-awesome.scss',
         'src/src-local/scss/*.scss'
     ];
     var local = sass(localScss, {style: 'compressed'})
@@ -47,9 +52,9 @@ gulp.task('css', function () {
     gulp.src('src/css/style.css').pipe(gulp.dest('..'));
 
     //src-local files for offline development mode
-    var cssLocal = [
-        'src/src-local/css/**/*'
-    ];
+    // var cssLocal = [
+    //     'src/src-local/css/**/*'
+    // ];
     // gulp.src(cssLocal)
     //     .pipe(concat('vendor-local-css.css'))
     //     .pipe(cleanCss())
@@ -65,7 +70,7 @@ gulp.task('fonts', function () {
 
     //src-local files for offline development mode
     gulp.src('src/src-local/fonts/**/*').pipe(gulp.dest('../src-local/fonts'));
-    gulp.src('bower_components/font-awesome/fonts/*').pipe(gulp.dest('../src-local/fonts'));
+    gulp.src('bower_components/font-awesome/fonts/*').pipe(gulp.dest('../fonts'));
 
 });
 
@@ -103,7 +108,7 @@ gulp.task('js', function () {
     ];
 
     gulp.src(jsLocal)
-        .pipe(concat('vendor-local.js'))
+        .pipe(concat('nimaji-local.js'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('../src-local/js'));
@@ -150,11 +155,11 @@ gulp.task('php', function () {
  */
 gulp.task('watch', function () {
 
-    gulp.watch(['src/scss/**/*', 'src/src-local/scss/*'], ['sass']);
-    gulp.watch(['src/js/*', 'src/src-local/js/*'], ['js']);
-    gulp.watch(['src/fonts/*', 'src/src-local/fonts/*'], ['fonts']);
-    gulp.watch(['src/css/*', 'src/src-local/css/*'], ['css']);
-    gulp.watch('src/img/*', ['img']);
+    gulp.watch(['src/scss/**/*', 'src/src-local/scss/**/*'], ['sass']);
+    gulp.watch(['src/js/**/*', 'src/src-local/js/**/*'], ['js']);
+    gulp.watch(['src/fonts/**/*', 'src/src-local/fonts/**/*'], ['fonts']);
+    gulp.watch(['src/css/**/*', 'src/src-local/css/**/*'], ['css']);
+    gulp.watch('src/img/**/*', ['img']);
     gulp.watch('src/php/**/*', ['php']);
 
 });
