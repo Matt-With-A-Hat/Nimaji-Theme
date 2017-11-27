@@ -89,6 +89,9 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 		// Set up the Wordpress Theme logo feature.
 		add_theme_support( 'custom-logo' );
 
+		//Customizable header
+		add_theme_support( 'custom-header' );
+
 		// Check and setup theme default settings.
 		setup_theme_default_settings();
 	}

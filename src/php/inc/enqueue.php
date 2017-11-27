@@ -64,7 +64,7 @@ if ( ! function_exists( 'nimaji_load_fonts' ) ) {
 	function nimaji_load_fonts() {
 		$the_theme = wp_get_theme();
 		if ( ! NIMAJI_DEBUG ) {
-			wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i' );
+			wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Droid+Sans:400,700|Roboto:400,400i,700,700i' );
 			wp_enqueue_style( 'googleFonts' );
 		} else {
 //		wp_register_style( 'googleFonts', get_template_directory_uri() . '/src-local/scss/fonts.min.css', array(), $the_theme->get( 'Version' ) );
@@ -85,6 +85,10 @@ if ( ! function_exists( 'nimaji_dequeue_scripts' ) ) {
 	function nimaji_dequeue_scripts( &$scripts ) {
 		if ( ! is_admin() ) {
 			$scripts->remove( 'jquery' );
+			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+			remove_action( 'wp_print_styles', 'print_emoji_styles' );
+			remove_action( 'admin_print_styles', 'print_emoji_styles' );
 		}
 	}
 
