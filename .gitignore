@@ -67,3 +67,4 @@ atlassian-ide-plugin.xml
 #Ignore debug tools
 krumo*/
 /vendor/
+/.sass-cache/
