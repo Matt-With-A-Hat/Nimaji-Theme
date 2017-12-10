@@ -172,7 +172,7 @@ gulp.task('default', ['sass', 'css', 'fonts', 'js', 'img', 'php']);
  */
 gulp.task('extract', function () {
 
-    var files = ['../**/*', '!../.git*', '!../gulp/**/*'];
+    var files = ['../**/*', '!../.git*', '!../gulp/**/*', '!../gulp'];
     // var files = '**/*';
     gulp.src(files)
         .pipe(zip('nimaji.zip'))
