@@ -24,40 +24,40 @@
   * --------------------------------------------------------------
   */
   
-  .nav-primary {
-    display: none;
-  }
-  
-  .nav-fixed {
-    height: 50px;
-    
-    ul#fixednav {
-      > li.menu-item {
-        > a {
-          padding: 16px 10px;
-        }
-      }
-    }
-    
-    .site-logo-box {
-      background: url("images/custom/logo_small_no_text.png") no-repeat left center;
-      height: 50px;
-    }
-    
-    .menu-toggle {
-      float: right;
-      color: white !important;
-    }
-    
-    .search-button {
-      
-      i.fa-search {
-        right: 17px;
-        position: absolute;
-        top: 17px;
-      }
-    }
-  }
+  //.nav-primary {
+  //  display: none;
+  //}
+  //
+  //.nav-fixed {
+  //  height: 50px;
+  //
+  //  ul#fixednav {
+  //    > li.menu-item {
+  //      > a {
+  //        padding: 16px 10px;
+  //      }
+  //    }
+  //  }
+  //
+  //  .site-logo-box {
+  //    background: url("images/custom/logo_small_no_text.png") no-repeat left center;
+  //    height: 50px;
+  //  }
+  //
+  //  .menu-toggle {
+  //    float: right;
+  //    color: white !important;
+  //  }
+  //
+  //  .search-button {
+  //
+  //    i.fa-search {
+  //      right: 17px;
+  //      position: absolute;
+  //      top: 17px;
+  //    }
+  //  }
+  //}
   
   /**
   * --------------------------------------------------------------

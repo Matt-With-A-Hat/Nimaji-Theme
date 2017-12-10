@@ -15,11 +15,11 @@ var zip = require('gulp-zip');
  */
 gulp.task('sass', function () {
 
-    // var utilities = sass('src/scss/utilities.scss', {style: 'compressed'})
-    //
-    //     .pipe(concat('utilities.css'))
-    //     .pipe(rename({suffix: '.min'}))
-    //     .pipe(gulp.dest('src/css'));
+    var utilities = sass('src/scss/utilities.scss', {style: 'compressed'})
+
+        .pipe(concat('utilities.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('../css'));
 
     var nimaji = sass('src/scss/nimaji.scss', {style: 'compressed'})
 

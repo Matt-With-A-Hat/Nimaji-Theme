@@ -55,31 +55,15 @@
 				}; ?>
 			</div>
 			<div class="container-fluid">
-
-				<div class="row">
-					<div id="small-devices-spacer"></div>
-					<nav class="menu-navbar">
-						<div class="container">
-							<div class="col-md-1 col-sm-12">
-								<div class="menu-logo">
-									<!--								--><?php //the_custom_logo(); ?>
-									<a href="<?= get_home_url(); ?>" class="navbar-brand custom-logo-link" rel="home" itemprop="url"><img width="77" height="40" src="<?= get_template_directory_uri(); ?>/img/maehroboter-logo.svg" class="img-responsive" alt="Mähroboter Guru" itemprop="logo"></a>
-								</div>
-								<button class="hamburger hamburger--spin" type="button">
-									<span class="hamburger-box">
-										<span class="hamburger-inner"></span>
-									</span>
-								</button>
-							</div>
-							<div class="col-md-11 col-sm-12">
-								<div class="row">
-									<?= nimaji_menu( 'primary' ); ?>
-									<div class="nav-layer"></div>
-								</div>
+				<nav class="menu-navbar">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="navbar-items">
+								<?= nimaji_menu( 'primary' ); ?>
 							</div>
 						</div>
-					</nav><!-- .site-navigation -->
-				</div>
+					</div>
+				</nav><!-- .site-navigation -->
 			</div><!-- .container -->
 		</header>
 	</div><!-- .wrapper-navbar end -->

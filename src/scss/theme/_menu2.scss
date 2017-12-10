@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 #nimaji-menu,
 #nimaji-menu ul,
 #nimaji-menu ul li,
@@ -15,6 +14,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 #nimaji-menu:after,
 #nimaji-menu > ul:after {
   content: ".";
@@ -24,165 +24,188 @@
   line-height: 0;
   height: 0;
 }
+
 #nimaji-menu #menu-button {
   display: none;
 }
+
 #nimaji-menu {
-  font-family: Montserrat, sans-serif;
-  background: #333333;
+  height: $navbar-height-md;
+  font-family: $open-sans;
+  background: $theme-4;
+  margin-left: 16px;
 }
+
 #nimaji-menu > ul > li {
   float: left;
 }
+
 #nimaji-menu.align-center > ul {
   font-size: 0;
   text-align: center;
 }
+
 #nimaji-menu.align-center > ul > li {
   display: inline-block;
   float: none;
 }
+
 #nimaji-menu.align-center ul ul {
   text-align: left;
 }
+
 #nimaji-menu.align-right > ul > li {
   float: right;
 }
+
 #nimaji-menu > ul > li > a {
-  padding: 17px;
-  font-size: 12px;
+  padding: 22px 17px;
+  font-size: 16px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #dddddd;
-  font-weight: 700;
+  color: $gray-3;
   text-transform: uppercase;
+  font-weight: 300;
 }
+
 #nimaji-menu > ul > li:hover > a {
   color: #ffffff;
 }
+
 #nimaji-menu > ul > li.has-sub > a {
   padding-right: 30px;
 }
+
 #nimaji-menu > ul > li.has-sub > a:after {
   position: absolute;
-  top: 22px;
-  right: 11px;
-  width: 8px;
-  height: 2px;
+  top: 29px;
+  right: 10px;
+  width: 9px;
+  height: 1px;
   display: block;
-  background: #dddddd;
+  background: $gray-3;
   content: '';
 }
+
 #nimaji-menu > ul > li.has-sub > a:before {
   position: absolute;
-  top: 19px;
+  top: 25px;
   right: 14px;
   display: block;
-  width: 2px;
-  height: 8px;
-  background: #dddddd;
+  width: 1px;
+  height: 9px;
+  background: $gray-3;
   content: '';
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
+  @include transition(all, 0.25s, ease);
 }
+
 #nimaji-menu > ul > li.has-sub:hover > a:before {
-  top: 23px;
+  top: 32px;
   height: 0;
 }
+
 #nimaji-menu ul ul {
   position: absolute;
   left: -9999px;
 }
+
 #nimaji-menu.align-right ul ul {
   text-align: right;
 }
+
 #nimaji-menu ul ul li {
   height: 0;
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
+  @include transition(all, 0.25s, ease);
 }
+
 #nimaji-menu li:hover > ul {
   left: auto;
 }
+
 #nimaji-menu.align-right li:hover > ul {
   left: auto;
   right: 0;
 }
+
 #nimaji-menu li:hover > ul > li {
-  height: 35px;
+  height: 39px;
 }
+
 #nimaji-menu ul ul ul {
   margin-left: 100%;
   top: 0;
 }
+
 #nimaji-menu.align-right ul ul ul {
   margin-left: 0;
   margin-right: 100%;
 }
+
 #nimaji-menu ul ul li a {
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-  padding: 11px 15px;
-  width: 170px;
-  font-size: 12px;
+  padding: 13px 15px;
+  width: 200px;
+  font-size: 14px;
   text-decoration: none;
-  color: #dddddd;
+  color: $gray-3;
   font-weight: 400;
-  background: #333333;
+  background: $theme-4;
 }
+
 #nimaji-menu ul ul li:last-child > a,
 #nimaji-menu ul ul li.last-item > a {
   border-bottom: 0;
 }
+
 #nimaji-menu ul ul li:hover > a,
 #nimaji-menu ul ul li a:hover {
   color: #ffffff;
 }
+
 #nimaji-menu ul ul li.has-sub > a:after {
   position: absolute;
-  top: 16px;
-  right: 11px;
-  width: 8px;
-  height: 2px;
+  top: 18px;
+  right: 10px;
+  width: 9px;
+  height: 1px;
   display: block;
-  background: #dddddd;
+  background: $gray-3;
   content: '';
 }
+
 #nimaji-menu.align-right ul ul li.has-sub > a:after {
   right: auto;
   left: 11px;
 }
+
 #nimaji-menu ul ul li.has-sub > a:before {
   position: absolute;
-  top: 13px;
+  top: 14px;
   right: 14px;
   display: block;
-  width: 2px;
-  height: 8px;
-  background: #dddddd;
+  width: 1px;
+  height: 9px;
+  background: $gray-4;
   content: '';
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
+  @include transition(all, 0.25s, ease);
 }
+
 #nimaji-menu.align-right ul ul li.has-sub > a:before {
   right: auto;
   left: 14px;
 }
+
 #nimaji-menu ul ul > li.has-sub:hover > a:before {
   top: 17px;
   height: 0;
 }
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+@media #{$mobile-all}{
   #nimaji-menu {
     width: 100%;
+    height: $navbar-height-sm;
+    margin-left: 0;
+    background-color: $theme-4;
   }
   #nimaji-menu ul {
     width: 100%;
@@ -215,7 +238,7 @@
   }
   #nimaji-menu ul ul li a {
     color: #dddddd;
-    background: none;
+    background: $theme-4;
   }
   #nimaji-menu ul ul li:hover > a,
   #nimaji-menu ul ul li.active > a {
@@ -239,7 +262,7 @@
   #nimaji-menu #menu-button {
     display: block;
     padding: 17px;
-    color: #dddddd;
+    color: white;
     cursor: pointer;
     font-size: 12px;
     text-transform: uppercase;
@@ -250,11 +273,12 @@
     top: 22px;
     right: 17px;
     display: block;
-    height: 4px;
+    height: 8px;
     width: 20px;
-    border-top: 2px solid #dddddd;
-    border-bottom: 2px solid #dddddd;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     content: '';
+    @include transition(all, 0.25s, ease);
   }
   #nimaji-menu #menu-button:before {
     position: absolute;
@@ -263,8 +287,9 @@
     display: block;
     height: 2px;
     width: 20px;
-    background: #dddddd;
+    background: white;
     content: '';
+    @include transition(all, 0.25s, ease);
   }
   #nimaji-menu #menu-button.menu-opened:after {
     top: 23px;
@@ -272,6 +297,7 @@
     height: 2px;
     width: 15px;
     background: #ffffff;
+    @include transition(all, 0.25s, ease);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -282,6 +308,7 @@
     top: 23px;
     background: #ffffff;
     width: 15px;
+    @include transition(all, 0.25s, ease);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -313,7 +340,7 @@
     width: 8px;
     height: 2px;
     display: block;
-    background: #dddddd;
+    background: white;
     content: '';
   }
   #nimaji-menu ul ul .submenu-button:after {
@@ -329,8 +356,8 @@
     right: 22px;
     display: block;
     width: 2px;
-    height: 8px;
-    background: #dddddd;
+    height: 9px;
+    background: white;
     content: '';
   }
   #nimaji-menu ul ul .submenu-button:before {

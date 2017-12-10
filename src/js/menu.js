@@ -24,6 +24,7 @@
                 }
             });
 
+            console.log(cssmenu.find('li ul'));
             cssmenu.find('li ul').parent().addClass('has-sub');
 
             multiTg = function() {

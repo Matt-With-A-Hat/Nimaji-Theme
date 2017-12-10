@@ -98,25 +98,41 @@ if ( ! function_exists( 'nimaji_menu' ) ) {
 
 		$items_level_1 = $items[0];
 		$items_level_2 = $items[1];
+		$items_level_3 = $items[2];
 
-		$html = '<div id="navbarNavDropdown">';
-		$html .= '<ul id="main-menu" class="main-menu-list">';
+		$html = '<div class="menu-logo">';
+//		$html .= '<a href="' . get_home_url() . '" class="navbar-brand custom-logo-link" rel="home" itemprop="url"><img width="77" height="40" src="' . get_template_directory_uri() . '
+//		/img/maehroboter-logo.svg" class="img-responsive" alt="Mähroboter Guru" itemprop="logo"></a>';
+		$html .= get_custom_logo();
+		$html .= '</div>';
+		$html .= '<div id="nimaji-menu">';
+		$html .= '<ul>';
 
 		foreach ( $items_level_1 as $item_level_1 ) {
 
 			if ( ! $items_level_2[ $item_level_1->ID ] ) {
-				$html .= "<li id='menu-item-$item_level_1->ID' class='menu-level-1'><a class='menu-link' href='$item_level_1->url' title='$item_level_1->title'><span>$item_level_1->title</span></a></li>";
+				$html .= "<li><a href='$item_level_1->url' title='$item_level_1->title'>$item_level_1->title</a></li>";
 			} else {
-				$html .= "<li id='menu-item-$item_level_1->ID' class='menu-level-1 has-subitem'><div class='dropdown'><a class='menu-link' href='$item_level_1->url' title='$item_level_1->title'><span>$item_level_1->title</span><i class='fa fa-chevron-down visible-l'></i><i class='fa fa-chevron-right visible-s-m open-submenu'></i></a>";
-				$html .= "<div id='dropdown-$item_level_1->ID' class='dropdown-content menu-list'>";
-				$html .= "<ul class='menu-list'>";
-				$html .= "<li class='menu-level-2 menu-back'><a class='menu-link' title='back'><span><i class='fa fa-chevron-left visible-s-m open-submenu'></i>Back</span></a></li>";
-				foreach ( $items_level_2[ $item_level_1->ID ] as $item_level_2 ) {
-					$html .= "<li id='menu-item-$item_level_2->ID' class='menu-level-2'><a class='menu-link' href='$item_level_2->url' title='$item_level_2->title'><span>$item_level_2->title</span></a></li>";
+				$html .= "<li><a href='$item_level_1->url' title='$item_level_1->title'>$item_level_1->title</a>";
+				$html .= "<ul>";
+				if ( $items_level_2 !== null ) {
+					foreach ( $items_level_2[ $item_level_1->ID ] as $item_level_2 ) {
+						if ( ! $items_level_2[ $item_level_1->ID ] ) {
+							$html .= "<li><a href='$item_level_2->url' title='$item_level_2->title'>$item_level_2->title</a></li>";
+						} else {
+							$html .= "<li><a href='$item_level_2->url' title='$item_level_2->title'>$item_level_2->title</a>";
+							if ( $items_level_3 !== null ) {
+								$html .= "<ul>";
+								foreach ( $items_level_3[ $item_level_2->ID ] as $item_level_3 ) {
+									$html .= "<li><a href='$item_level_3->url' title='$item_level_3->title'>$item_level_3->title</a></li>";
+								}
+								$html .= "</ul>";
+							}
+							$html .= "</li>";
+						}
+					}
 				}
 				$html .= "</ul>";
-				$html .= "</div>";
-				$html .= "</div>";
 				$html .= "</li>";
 			}
 		}
@@ -252,3 +268,14 @@ function nimaji_get_post_categories( $html = false ) {
 		return $categories;
 	}
 }
+
+/**
+ * @return mixed
+ */
+function allowed_upload_extensions() {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_filter( 'upload_mimes', 'allowed_upload_extensions' );

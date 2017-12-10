@@ -26,9 +26,9 @@ if ( ! function_exists( 'nimaji_scripts' ) ) {
 			wp_register_style( 'nimaji-local', get_template_directory_uri() . '/src-local/css/nimaji-local.min.css', array(), $the_theme->get( 'Version' ) );
 			wp_enqueue_style( 'nimaji-local' );
 		}
-//		wp_register_style( 'utilities', get_template_directory_uri() . '/css/utilities.min.css', array(), $the_theme->get( 'Version' ) );
+		wp_register_style( 'utilities', get_template_directory_uri() . '/css/utilities.min.css', array(), $the_theme->get( 'Version' ) );
 		wp_register_style( 'nimaji', get_template_directory_uri() . '/css/nimaji.min.css', array(), $the_theme->get( 'Version' ) );
-//		wp_enqueue_style( 'utilities' );
+		wp_enqueue_style( 'utilities' );
 		wp_enqueue_style( 'nimaji' );
 
 		/**
@@ -85,10 +85,6 @@ if ( ! function_exists( 'nimaji_dequeue_scripts' ) ) {
 	function nimaji_dequeue_scripts( &$scripts ) {
 		if ( ! is_admin() ) {
 			$scripts->remove( 'jquery' );
-			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-			remove_action( 'wp_print_styles', 'print_emoji_styles' );
-			remove_action( 'admin_print_styles', 'print_emoji_styles' );
 		}
 	}
 

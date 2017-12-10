@@ -490,7 +490,7 @@ strong, strong:hover {
 
 article {
   p {
-    color: $black-3;
+    color: $black-4;
   }
 }
 
@@ -620,7 +620,7 @@ div.box--slider {
   font-size: 20px;
   padding-top: 0;
   font-weight: 700;
-  background-color: $theme-1 !important;
+  background-color: $theme-1;
 }
 
 .product--amazon-rating {
@@ -869,13 +869,13 @@ a.nodecoration-link {
       a {
         cursor: pointer;
         background-color: $white;
-        color: $black-3 !important;
+        color: $black-4 !important;
       }
     }
     li.active {
       a {
         background-color: $theme-1;
-        color: $black-3;
+        color: $black-4;
       }
     }
     li {
@@ -898,7 +898,7 @@ a.nodecoration-link {
 */
 table {
   font-size: 90%;
-  color: $black-3;
+  color: $black-4;
   border: 1px solid $gray-3 !important;
   thead {
     tr {
@@ -995,6 +995,24 @@ td.table--progress {
 * =Header
 * --------------------------------------------------------------
 */
+nav.menu-navbar {
+  background: $theme-4;
+  border-radius: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  height: 60px;
+  
+  .container {
+    height: 100%;
+  }
+  .row {
+    background-color: $theme-4;
+  }
+}
+
 #wpadminbar {
   position: fixed !important;
 }
@@ -1044,6 +1062,244 @@ td.table--progress {
   img {
     width: 100%;
   }
+}
+
+.menu-logo {
+  height: $navbar-height-md;
+  width: 80px;
+  display: block;
+  margin: 0 15px;
+  position: relative;
+  float: left;
+  z-index: 1000;
+  a.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: $navbar-height-md;
+  }
+}
+
+/**
+* =New menu
+*/
+@media (min-width: 768px) {
+  .navbar-items {
+    margin: 0 auto;
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-items {
+    margin: 0 auto;
+    width: 970px;
+  }
+}
+
+#nimaji-menu,
+#nimaji-menu ul,
+#nimaji-menu ul li,
+#nimaji-menu ul li a,
+#nimaji-menu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#nimaji-menu:after,
+#nimaji-menu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+#nimaji-menu #menu-button {
+  display: none;
+}
+
+#nimaji-menu {
+  //height: $navbar-height-md;
+  font-family: $open-sans;
+  background: $theme-4;
+  margin-left: 16px;
+}
+
+#nimaji-menu > ul > li {
+  float: left;
+  border-right: solid 1px rgba(0, 0, 0, 0.1);
+  border-left: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+#nimaji-menu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+
+#nimaji-menu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+
+#nimaji-menu.align-center ul ul {
+  text-align: left;
+}
+
+#nimaji-menu.align-right > ul > li {
+  float: right;
+}
+
+#nimaji-menu > ul > li > a {
+  padding: 22px 17px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: $gray-3;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+#nimaji-menu > ul > li:hover > a {
+  color: #ffffff;
+}
+
+#nimaji-menu > ul > li.has-sub > a {
+  padding-right: 30px;
+}
+
+#nimaji-menu > ul > li.has-sub > a:after {
+  position: absolute;
+  top: 29px;
+  right: 10px;
+  width: 9px;
+  height: 1px;
+  display: block;
+  background: $gray-3;
+  content: '';
+}
+
+#nimaji-menu > ul > li.has-sub > a:before {
+  position: absolute;
+  top: 25px;
+  right: 14px;
+  display: block;
+  width: 1px;
+  height: 9px;
+  background: $gray-3;
+  content: '';
+  @include transition(all, 0.25s, ease);
+}
+
+#nimaji-menu > ul > li.has-sub:hover > a:before {
+  top: 32px;
+  height: 0;
+}
+
+#nimaji-menu ul ul {
+  position: absolute;
+  left: -9999px;
+}
+
+#nimaji-menu.align-right ul ul {
+  text-align: right;
+}
+
+#nimaji-menu ul ul li {
+  height: 0;
+  @include transition(all, 0.25s, ease);
+}
+
+#nimaji-menu li:hover > ul {
+  left: auto;
+}
+
+#nimaji-menu.align-right li:hover > ul {
+  left: auto;
+  right: 0;
+}
+
+#nimaji-menu li:hover > ul > li {
+  height: 39px;
+}
+
+#nimaji-menu ul ul ul {
+  margin-left: 100%;
+  top: 0;
+}
+
+#nimaji-menu.align-right ul ul ul {
+  margin-left: 0;
+  margin-right: 100%;
+}
+
+#nimaji-menu ul ul li a {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.15);
+  padding: 13px 15px;
+  width: 200px;
+  font-size: 14px;
+  text-decoration: none;
+  color: $gray-3;
+  font-weight: 400;
+  background: $theme-4;
+}
+
+#nimaji-menu ul ul li:last-child > a,
+#nimaji-menu ul ul li.last-item > a {
+  border-bottom: 0;
+}
+
+#nimaji-menu ul ul li:hover > a,
+#nimaji-menu ul ul li a:hover {
+  color: #ffffff;
+}
+
+#nimaji-menu ul ul li.has-sub > a:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 9px;
+  height: 1px;
+  display: block;
+  background: $gray-3;
+  content: '';
+}
+
+#nimaji-menu.align-right ul ul li.has-sub > a:after {
+  right: auto;
+  left: 11px;
+}
+
+#nimaji-menu ul ul li.has-sub > a:before {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: block;
+  width: 1px;
+  height: 9px;
+  background: $gray-4;
+  content: '';
+  @include transition(all, 0.25s, ease);
+}
+
+#nimaji-menu.align-right ul ul li.has-sub > a:before {
+  right: auto;
+  left: 14px;
+}
+
+#nimaji-menu ul ul > li.has-sub:hover > a:before {
+  top: 17px;
+  height: 0;
 }
 
 /**
