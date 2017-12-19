@@ -1051,7 +1051,8 @@ nav.menu-navbar {
   font-weight: 300; }
 
 #nimaji-menu > ul > li:hover > a {
-  color: #ffffff; }
+  color: #ffffff;
+  background-color: #375D81; }
 
 #nimaji-menu > ul > li.has-sub > a {
   padding-right: 30px; }
@@ -1297,8 +1298,8 @@ footer#wrapper-footer {
   width: 100%;
   overflow: hidden; }
 
-.footer-hint {
-  font-size: 10px;
+.footer--hint {
+  font-size: 11px;
   color: #dddddd; }
 
 .site-footer {
@@ -1326,14 +1327,6 @@ footer#wrapper-footer {
 .widget-area .label--checkbox {
   margin-top: 10px; }
 
-/**
-* --------------------------------------------------------------
-* =Plugins
-* --------------------------------------------------------------
-*/
-/**
-* =Cookie Notice
-*/
 /**
 * --------------------------------------------------------------
 * =Bootstrap Fix
@@ -1616,6 +1609,9 @@ footer#wrapper-footer {
   #nimaji-menu > ul > li {
     float: none; }
 
+  #nimaji-menu > ul > li > a {
+    padding: 17px 17px; }
+
   #nimaji-menu ul ul li a {
     padding-left: 25px;
     color: #dddddd;
@@ -1727,7 +1723,7 @@ footer#wrapper-footer {
     cursor: pointer; }
 
   #nimaji-menu .submenu-button.submenu-opened {
-    background: #333333; }
+    background: #375D81; }
 
   #nimaji-menu ul ul .submenu-button {
     height: 34px;
@@ -2312,11 +2308,16 @@ footer#wrapper-footer {
   width: 100%;
   min-height: 42px;
   font-size: 14px;
-  font-family: Arial;
   text-align: center;
   z-index: 1999999;
   padding: 5px 42px;
-  line-height: 31px; }
+  line-height: 31px;
+  color: #dddddd;
+  background-color: #375D81; }
+  #cookie-law-bar a {
+    color: #ABC8E2; }
+  #cookie-law-bar button {
+    color: #222222; }
 
 .cookie-law-bar-transition-top {
   -webkit-transition: top 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);

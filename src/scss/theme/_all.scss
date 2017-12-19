@@ -1172,6 +1172,7 @@ nav.menu-navbar {
 
 #nimaji-menu > ul > li:hover > a {
   color: #ffffff;
+  background-color: $theme-4;
 }
 
 #nimaji-menu > ul > li.has-sub > a {
@@ -1466,8 +1467,8 @@ footer#wrapper-footer {
   overflow: hidden;
 }
 
-.footer-hint {
-  font-size: 10px;
+.footer--hint {
+  font-size: 11px;
   color: $gray-3;
 }
 
@@ -1506,20 +1507,6 @@ footer#wrapper-footer {
     margin-top: 10px;
   }
 }
-
-/**
-* --------------------------------------------------------------
-* =Plugins
-* --------------------------------------------------------------
-*/
-
-/**
-* =Cookie Notice
-*/
-
-//#cn-accept-cookie{
-//  background-color: $theme-4 !important;
-//}
 
 /**
 * --------------------------------------------------------------
