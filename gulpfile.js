@@ -168,6 +168,18 @@ gulp.task('default', ['sass', 'css', 'fonts', 'js', 'img', 'php']);
 
 
 /**
+ * =Update other installations
+ */
+gulp.task('update',function(){
+
+    var files = ['../**/*', '!../.git*', '!../gulp/**/*', '!../gulp'];
+
+    gulp.src(files)
+        .pipe(gulp.dest('../../../../../wireless-empire/wp-content/themes/nimaji'))
+});
+
+
+/**
  * =Extract
  */
 gulp.task('extract', function () {

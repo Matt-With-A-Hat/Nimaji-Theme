@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
 
 							<br><br>
-							<p class="footer-hint">* Einige Links können Amazon Affiliate Links sein. Dies können auch Bilder sein, welche auf Amazon verlinken. Wenn Sie diese Links benutzen, bekommen wir unter Umständen eine Provision. Für Sie entstehen dadurch keinerlei Zusatzkosten. Preise inkl. MwSt. ggf. zzgl. Versand. Zwischenzeitliche Änderung der Preise, Lieferzeit und -kosten möglich. Alle Angaben ohne Gewähr</p>
+							<p class="footer--hint">* Einige Links können Amazon Affiliate Links sein. Dies können auch Bilder sein, welche auf Amazon verlinken. Wenn Sie diese Links benutzen, bekommen wir unter Umständen eine Provision. Für Sie entstehen dadurch keinerlei Zusatzkosten. Preise inkl. MwSt. ggf. zzgl. Versand. Zwischenzeitliche Änderung der Preise, Lieferzeit und -kosten möglich. Alle Angaben ohne Gewähr</p>
 						</div>
 
 					</div><!-- .wrap -->

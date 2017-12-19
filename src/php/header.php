@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<?php include( 'inc/analyticstracking.php' ); ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,11 +24,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php include( 'inc/analyticstracking.php' ); ?>
-<?php
-//echo "<br><br><br><br><br><br>";
-//krumo(get_header_image());
-?>
 <div class="site-container" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
